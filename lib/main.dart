@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mesh/mesh.dart';
 import 'buy.dart';
+import 'survey_section.dart';
 
 const _hiraFont = TextStyle(fontFamily: 'Hiragino Sans');
 
@@ -70,20 +71,31 @@ class MyHome extends StatelessWidget {
           SafeArea(
             child: Column(
               children: [
-                // 上部は広げる（ここに他のUIを追加できます）
+                // 上部：スクロール可能エリア
                 Expanded(
-                  child: Center(
-                    child: Text(
-                      "Bitcoin Background",
-                      style: _hiraFont.copyWith(
-                        color: Colors.white,
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        // タイトル部分
+                        const SizedBox(height: 40),
+                        Text(
+                          "Bitcoin Background",
+                          style: _hiraFont.copyWith(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 24),
+
+                        // ★ Figmaから取り込んだセクション
+                        const SurveySection(),
+                      ],
                     ),
                   ),
                 ),
-                // 下部にボタンを配置
+
+                // 下部にボタンを配置（固定）
                 _buildBottomButton(context),
               ],
             ),
