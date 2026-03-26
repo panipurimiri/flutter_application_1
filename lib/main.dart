@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mesh/mesh.dart';
 import 'btc_price_card.dart';
 import 'survey_section.dart';
 
@@ -36,33 +37,24 @@ class _BtcDetailPageState extends State<BtcDetailPage> {
       extendBody: true,
       body: Stack(
         children: [
-          // 背景: Figma準拠レイヤー構成
-          // Layer 1: メイン対角グラデーション（黄→赤）
+          // 背景層（メッシュグラデーション）
           Positioned.fill(
-            child: Container(
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment(0.00, 0.00),
-                  end: Alignment(1.00, 1.00),
-                  colors: [Color(0xFFFCCF31), Color(0xFFF55555)],
-                ),
-              ),
-            ),
-          ),
-          // Layer 2: グレー縦グラデーション（上部を暗くし下部を透明に）
-          Positioned.fill(
-            child: Container(
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment(0.50, 0.00),
-                  end: Alignment(0.45, 1.00),
-                  colors: [
-                    Color(0x606A6A6E),
-                    Color(0x40555558),
-                    Color(0x204B4B4E),
-                    Color(0x00424244),
-                  ],
-                ),
+            child: OMeshGradient(
+              mesh: OMeshRect(
+                width: 3,
+                height: 3,
+                backgroundColor: const Color(0xFFF7931A),
+                fallbackColor: const Color(0xFFF7931A),
+                vertices: [
+                  (-0.08, -0.05).v, (0.52, -0.08).v, (1.08, 0.02).v,
+                  (-0.12, 0.42).v,  (0.60, 0.42).v,  (1.10, 0.45).v,
+                  (-0.05, 1.08).v,  (0.48, 1.02).v,  (1.05, 1.05).v,
+                ],
+                colors: const [
+                  Color(0xFFFCC94D), Color(0xFFFFB347), Color(0xFFF7931A),
+                  Color(0xFFF7931A), Color(0xFFF7931A), Color(0xFFFFB347),
+                  Color(0xFFD97706), Color(0xFFE67E22), Color(0xFFFF8F3D),
+                ],
               ),
             ),
           ),
