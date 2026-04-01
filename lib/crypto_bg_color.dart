@@ -25,11 +25,11 @@ class MyHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Bitcoinカラー
-    const btcOrange = Color(0xFFF7931A);
-    const btcLight = Color(0xFFFFB347);
-    const btcYellow = Color(0xFFFFC94D);
-    const btcDark = Color(0xFFD97706);
-    const btcDeep = Color(0xFFE67E22);
+    const btcOrange = Color(0xFFEE590C);
+    const btcLight = Color(0xFFF09361);
+    const btcYellow = Color(0xFFF4D491);
+    const btcDark = Color(0xFF9D3C26);
+    const btcDeep = Color(0xFFE24809);
 
     return Scaffold(
       body: Stack(
@@ -61,7 +61,7 @@ class MyHome extends StatelessWidget {
                   btcLight,
                   btcDark,
                   btcDeep,
-                  Color(0xFFFF8F3D),
+                  Color(0xFFE24809),
                 ],
               ),
             ),
