@@ -1,0 +1,119 @@
+import 'package:flutter/material.dart';
+import 'package:mesh/mesh.dart';
+import 'buy.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Hiragino Sans'),
+      home: const MyHome(),
+    );
+  }
+}
+
+class MyHome extends StatelessWidget {
+  const MyHome({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    const c1 = Color(0xFFA2C7A2);
+    const c2 = Color(0xFF79AE79);
+    const c3 = Color(0xFF328332);
+    const c4 = Color(0xFF296B29);
+    const c5 = Color(0xFF225922);
+
+    return Scaffold(
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: OMeshGradient(
+              mesh: OMeshRect(
+                width: 3,
+                height: 3,
+                backgroundColor: c3,
+                fallbackColor: c3,
+                vertices: [
+                  (-0.08, -0.05).v,
+                  (0.52, -0.08).v,
+                  (1.08, 0.02).v,
+                  (-0.12, 0.42).v,
+                  (0.60, 0.42).v,
+                  (1.10, 0.45).v,
+                  (-0.05, 1.08).v,
+                  (0.48, 1.02).v,
+                  (1.05, 1.05).v,
+                ],
+                colors: const [c1, c2, c3, c3, c3, c2, c5, c4, c4],
+              ),
+            ),
+          ),
+          SafeArea(
+            child: Column(
+              children: [
+                const Expanded(
+                  child: Center(
+                    child: Text(
+                      'crypto_bg_color_DG1',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                _buildBottomButton(context),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildBottomButton(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(
+        left: 20,
+        right: 20,
+        top: 20,
+        bottom: MediaQuery.of(context).padding.bottom + 10,
+      ),
+      child: SizedBox(
+        width: double.infinity,
+        height: 56,
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color(0xFFBF0000),
+            shape: const StadiumBorder(),
+            elevation: 0,
+          ),
+          onPressed: () {
+            showModalBottomSheet(
+              context: context,
+              isScrollControlled: true,
+              backgroundColor: Colors.transparent,
+              builder: (context) => const BuyPage(),
+            );
+          },
+          child: const Text(
+            '注文',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
