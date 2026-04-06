@@ -24,11 +24,11 @@ class MyHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const c1 = Color(0xFFD1ABFF);
-    const c2 = Color(0xFFBC86FF);
-    const c3 = Color(0xFF9945FF);
-    const c4 = Color(0xFF7D38D1);
-    const c5 = Color(0xFF682EAD);
+    const c1 = Color(0xFFDBC4FF);
+    const c2 = Color(0xFFCBA9FF);
+    const c3 = Color(0xFFB07CFF);
+    const c4 = Color(0xFF9065D1);
+    const c5 = Color(0xFF7754AD);
 
     return Scaffold(
       body: Stack(

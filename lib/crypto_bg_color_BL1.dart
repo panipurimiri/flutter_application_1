@@ -61,7 +61,7 @@ class MyHome extends StatelessWidget {
                 const Expanded(
                   child: Center(
                     child: Text(
-                      'crypto_bg_color_BM1',
+                      'crypto_bg_color_BL1',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 24,

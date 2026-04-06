@@ -24,11 +24,12 @@ class MyHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const c1 = Color(0xFF90E3CC);
-    const c2 = Color(0xFF5FD6B5);
-    const c3 = Color(0xFF0AC18E);
-    const c4 = Color(0xFF089E74);
-    const c5 = Color(0xFF068360);
+    const c1 = Color(0xFF9898FF);
+    const c2 = Color(0xFF6B6BFF);
+    const c3 = Color(0xFF1C1CFF);
+    const c4 = Color(0xFF1616D1);
+    const c5 = Color(0xFF1313AD);
+
     return Scaffold(
       body: Stack(
         children: [
@@ -60,7 +61,7 @@ class MyHome extends StatelessWidget {
                 const Expanded(
                   child: Center(
                     child: Text(
-                      'crypto_bg_color_GN1',
+                      'Pcrypto_bg_color_BL2',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 24,
